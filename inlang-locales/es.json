@@ -1,14 +1,14 @@
 {
-  "{count, plural, one {You have # unread message} other {You have # unread messages}}": "{count, plural, one {Tienes # mensaje sin leer} many {Tienes # de mensajes sin leer} other {Tienes # mensajes sin leer}}",
-  "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.": "Edita las traducciones en <0>Fink</0> y verás <1>el texto actualizado</1> tras sincronizar.",
-  "Formatting": "Formato",
-  "Hello, {name}!": "¡Hola, {name}!",
-  "Interpolation": "Interpolación",
-  "Language": "Idioma",
-  "Lingui + inlang POC": "POC de Lingui + inlang",
-  "Plain string": "Cadena simple",
-  "Plurals": "Plurales",
-  "Rich text": "Texto enriquecido",
-  "Translations are loaded at runtime from per-locale catalogs.": "Las traducciones se cargan en tiempo de ejecución desde catálogos por idioma.",
-  "Your name": "Tu nombre"
+  "znBR2Y": "{count, plural, one {Tienes # mensaje sin leer} many {Tienes # de mensajes sin leer} other {Tienes # mensajes sin leer}}",
+  "5D6sc7": "Edita las traducciones en <0>Fink</0> y verás <1>el texto actualizado</1> tras sincronizar.",
+  "fxmZBN": "Formato",
+  "3eEmBT": "¡Hola, {name}!",
+  "trBjAV": "Interpolación",
+  "vXIe7J": "Idioma",
+  "yDslcl": "POC de Lingui + inlang",
+  "KzKCDN": "Cadena simple",
+  "u5SHG2": "Plurales",
+  "esg2-O": "Texto enriquecido",
+  "NVCdpB": "Las traducciones se cargan en tiempo de ejecución desde catálogos por idioma.",
+  "q8yluz": "Tu nombre"
 }

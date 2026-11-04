@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Bridges Lingui catalogs (src/locales/*.json, keyed by hashed id) and the
-// flat i18next-style files inlang/Fink edits (inlang-locales/*.json, keyed by
-// the human-readable source message).
+// Bridges Lingui catalogs (src/locales/*.json: id -> {message, translation, ...})
+// and the flat ICU files inlang/Fink edit (inlang-locales/*.json: id -> ICU string),
+// which @inlang/plugin-icu1 parses into plural/select variants.
 //
 //   node scripts/inlang-sync.mjs export   # lingui -> inlang   (after `lingui extract`)
 //   node scripts/inlang-sync.mjs import   # inlang -> lingui   (after pulling Fink edits)
@@ -16,24 +16,23 @@ const source = read(`${LINGUI}/en.json`)
 fs.mkdirSync(INLANG, { recursive: true })
 
 const mode = process.argv[2]
+if (!['export', 'import'].includes(mode)) {
+  console.error('usage: inlang-sync.mjs export|import')
+  process.exit(1)
+}
 for (const locale of locales) {
   const lingui = read(`${LINGUI}/${locale}.json`)
   const inlang = read(`${INLANG}/${locale}.json`)
-  if (mode === 'export') {
-    // Keep existing translations from inlang; add new messages; drop obsolete ones.
-    const out = {}
-    for (const { message } of Object.values(source)) {
-      const fromLingui = lingui[Object.keys(source).find((k) => source[k].message === message)]?.translation
-      out[message] = inlang[message] || fromLingui || (locale === 'en' ? message : '')
+  const out = {}
+  for (const [id, entry] of Object.entries(source)) {
+    if (mode === 'export') {
+      // Keep edits already in inlang; fall back to Lingui; en always mirrors source text.
+      out[id] = locale === 'en' ? entry.message : inlang[id] || lingui[id]?.translation || ''
+    } else {
+      lingui[id] = { ...(lingui[id] ?? entry), translation: inlang[id] ?? '' }
     }
-    write(`${INLANG}/${locale}.json`, out)
-  } else if (mode === 'import') {
-    for (const [id, entry] of Object.entries(source)) {
-      lingui[id] = { ...(lingui[id] ?? entry), translation: inlang[entry.message] ?? '' }
-    }
-    write(`${LINGUI}/${locale}.json`, lingui)
-  } else {
-    console.error('usage: inlang-sync.mjs export|import'); process.exit(1)
   }
+  if (mode === 'export') write(`${INLANG}/${locale}.json`, out)
+  else write(`${LINGUI}/${locale}.json`, lingui)
 }
 console.log(`${mode}ed ${locales.join(', ')}`)
