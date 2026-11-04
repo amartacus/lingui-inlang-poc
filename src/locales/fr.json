@@ -1,0 +1,154 @@
+{
+  "znBR2Y": {
+    "message": "{count, plural, one {You have # unread message} other {You have # unread messages}}",
+    "placeholders": {
+      "count": [
+        "count"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        42
+      ]
+    ],
+    "translation": "{count, plural, one {Vous avez # message non lu} many {Vous avez # de messages non lus} other {Vous avez # messages non lus}}"
+  },
+  "5D6sc7": {
+    "message": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        52
+      ]
+    ],
+    "translation": "Modifiez les traductions dans <0>Fink</0> et voyez <1>le texte mis à jour</1> après la synchronisation."
+  },
+  "fxmZBN": {
+    "message": "Formatting",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        60
+      ]
+    ],
+    "translation": "Mise en forme"
+  },
+  "3eEmBT": {
+    "message": "Hello, {name}!",
+    "placeholders": {
+      "name": [
+        "name"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        34
+      ]
+    ],
+    "translation": "Bonjour, {name} !"
+  },
+  "trBjAV": {
+    "message": "Interpolation",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        32
+      ]
+    ],
+    "translation": "Interpolation"
+  },
+  "vXIe7J": {
+    "message": "Language",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        17
+      ]
+    ],
+    "translation": "Langue"
+  },
+  "yDslcl": {
+    "message": "Lingui + inlang POC",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        15
+      ]
+    ],
+    "translation": "POC Lingui + inlang"
+  },
+  "KzKCDN": {
+    "message": "Plain string",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        27
+      ]
+    ],
+    "translation": "Chaîne simple"
+  },
+  "u5SHG2": {
+    "message": "Plurals",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        38
+      ]
+    ],
+    "translation": "Pluriels"
+  },
+  "esg2-O": {
+    "message": "Rich text",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        50
+      ]
+    ],
+    "translation": "Texte enrichi"
+  },
+  "NVCdpB": {
+    "message": "Translations are loaded at runtime from per-locale catalogs.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        28
+      ]
+    ],
+    "translation": "Les traductions sont chargées à l’exécution depuis des catalogues par langue."
+  },
+  "q8yluz": {
+    "message": "Your name",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/App.tsx",
+        33
+      ]
+    ],
+    "translation": "Votre nom"
+  }
+}

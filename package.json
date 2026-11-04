@@ -1,0 +1,41 @@
+{
+  "name": "lingui-inlang-poc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "extract": "lingui extract",
+    "compile": "lingui compile --typescript",
+    "inlang:export": "node scripts/inlang-sync.mjs export",
+    "inlang:import": "node scripts/inlang-sync.mjs import",
+    "i18n:push": "npm run extract && npm run inlang:export",
+    "i18n:pull": "npm run inlang:import"
+  },
+  "dependencies": {
+    "@lingui/core": "^6.12.0",
+    "@lingui/react": "^6.12.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.13",
+    "@lingui/babel-plugin-lingui-macro": "^6.12.0",
+    "@lingui/cli": "^6.12.0",
+    "@lingui/format-json": "^6.12.0",
+    "@lingui/vite-plugin": "^6.12.0",
+    "@rolldown/plugin-babel": "^0.3.0",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "babel-plugin-macros": "^3.1.0",
+    "oxlint": "^1.89.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.5"
+  }
+}

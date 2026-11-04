@@ -1,0 +1,14 @@
+{
+  "{count, plural, one {You have # unread message} other {You have # unread messages}}": "{count, plural, other {未読メッセージが#件あります}}",
+  "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.": "<0>Fink</0>で翻訳を編集し、同期後に<1>更新されたテキスト</1>を確認します。",
+  "Formatting": "書式設定",
+  "Hello, {name}!": "こんにちは、{name}さん！",
+  "Interpolation": "補間",
+  "Language": "言語",
+  "Lingui + inlang POC": "Lingui + inlang POC",
+  "Plain string": "単純な文字列",
+  "Plurals": "複数形",
+  "Rich text": "リッチテキスト",
+  "Translations are loaded at runtime from per-locale catalogs.": "翻訳は言語ごとのカタログから実行時に読み込まれます。",
+  "Your name": "あなたの名前"
+}

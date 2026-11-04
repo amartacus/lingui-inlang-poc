@@ -1,0 +1,14 @@
+{
+  "{count, plural, one {You have # unread message} other {You have # unread messages}}": "{count, plural, one {Vous avez # message non lu} many {Vous avez # de messages non lus} other {Vous avez # messages non lus}}",
+  "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.": "Modifiez les traductions dans <0>Fink</0> et voyez <1>le texte mis à jour</1> après la synchronisation.",
+  "Formatting": "Mise en forme",
+  "Hello, {name}!": "Bonjour, {name} !",
+  "Interpolation": "Interpolation",
+  "Language": "Langue",
+  "Lingui + inlang POC": "POC Lingui + inlang",
+  "Plain string": "Chaîne simple",
+  "Plurals": "Pluriels",
+  "Rich text": "Texte enrichi",
+  "Translations are loaded at runtime from per-locale catalogs.": "Les traductions sont chargées à l’exécution depuis des catalogues par langue.",
+  "Your name": "Votre nom"
+}
