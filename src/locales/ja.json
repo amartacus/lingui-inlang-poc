@@ -13,7 +13,7 @@
         42
       ]
     ],
-    "translation": "{count, plural, other {未読メッセージが#件あります}}"
+    "translation": "未読メッセージが{count, plural, other {#}}件あります"
   },
   "5D6sc7": {
     "message": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",

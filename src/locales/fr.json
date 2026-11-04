@@ -13,7 +13,7 @@
         42
       ]
     ],
-    "translation": "{count, plural, one {Vous avez # message non lu} many {Vous avez # de messages non lus} other {Vous avez # messages non lus}}"
+    "translation": "Vous avez {count, plural, one {# message non lu} many {# de messages non lus} other {# messages non lus}}"
   },
   "5D6sc7": {
     "message": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",

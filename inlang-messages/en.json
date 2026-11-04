@@ -1,0 +1,29 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "znBR2Y": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "You have {count: icu:pound} unread message",
+        "countPlural=*": "You have {count: icu:pound} unread messages"
+      }
+    }
+  ],
+  "5D6sc7": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",
+  "fxmZBN": "Formatting",
+  "3eEmBT": "Hello, {name}!",
+  "trBjAV": "Interpolation",
+  "vXIe7J": "Language",
+  "yDslcl": "Lingui + inlang POC",
+  "KzKCDN": "Plain string",
+  "u5SHG2": "Plurals",
+  "esg2-O": "Rich text",
+  "NVCdpB": "Translations are loaded at runtime from per-locale catalogs.",
+  "q8yluz": "Your name"
+}

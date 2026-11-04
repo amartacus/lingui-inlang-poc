@@ -1,5 +1,19 @@
 {
-  "znBR2Y": "{count, plural, other {未読メッセージが#件あります}}",
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "znBR2Y": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=*": "未読メッセージが{count: icu:pound}件あります"
+      }
+    }
+  ],
   "5D6sc7": "<0>Fink</0>で翻訳を編集し、同期後に<1>更新されたテキスト</1>を確認します。",
   "fxmZBN": "書式設定",
   "3eEmBT": "こんにちは、{name}さん！",

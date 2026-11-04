@@ -13,7 +13,7 @@
         42
       ]
     ],
-    "translation": "{count, plural, one {You have # unread message} other {You have # unread messages}}"
+    "translation": "You have {count, plural, one {# unread message} other {# unread messages}}"
   },
   "5D6sc7": {
     "message": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "znBR2Y": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "Tienes {count: icu:pound} mensaje sin leer",
+        "countPlural=many": "Tienes {count: icu:pound} de mensajes sin leer",
+        "countPlural=*": "Tienes {count: icu:pound} mensajes sin leer"
+      }
+    }
+  ],
+  "5D6sc7": "Edita las traducciones en <0>Fink</0> y verás <1>el texto actualizado</1> tras sincronizar.",
+  "fxmZBN": "Formato",
+  "3eEmBT": "¡Hola, {name}!",
+  "trBjAV": "Interpolación",
+  "vXIe7J": "Idioma",
+  "yDslcl": "POC de Lingui + inlang",
+  "KzKCDN": "Cadena simple",
+  "u5SHG2": "Plurales",
+  "esg2-O": "Texto enriquecido",
+  "NVCdpB": "Las traducciones se cargan en tiempo de ejecución desde catálogos por idioma.",
+  "q8yluz": "Tu nombre"
+}
