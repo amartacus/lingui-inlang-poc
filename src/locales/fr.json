@@ -6,7 +6,9 @@
         "count"
       ]
     },
-    "comments": [],
+    "comments": [
+      "Unread-message counter. # is replaced by the number. Provide every plural category your language needs."
+    ],
     "origin": [
       [
         "src/App.tsx",
@@ -18,11 +20,13 @@
   "5D6sc7": {
     "message": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",
     "placeholders": {},
-    "comments": [],
+    "comments": [
+      "Keep the <0> (link) and <1> (bold) tags and their order around the same words."
+    ],
     "origin": [
       [
         "src/App.tsx",
-        52
+        54
       ]
     ],
     "translation": "Modifiez les traductions dans <0>Fink</0> et voyez <1>le texte mis à jour</1> après la synchronisation."
@@ -34,7 +38,7 @@
     "origin": [
       [
         "src/App.tsx",
-        60
+        62
       ]
     ],
     "translation": "Mise en forme"
@@ -46,7 +50,9 @@
         "name"
       ]
     },
-    "comments": [],
+    "comments": [
+      "Greeting. {name} is the user's first name as typed in the input above."
+    ],
     "origin": [
       [
         "src/App.tsx",
@@ -82,7 +88,9 @@
   "yDslcl": {
     "message": "Lingui + inlang POC",
     "placeholders": {},
-    "comments": [],
+    "comments": [
+      "Page title shown in the header. Keep 'Lingui' and 'inlang' untranslated (product names)."
+    ],
     "origin": [
       [
         "src/App.tsx",
@@ -122,7 +130,7 @@
     "origin": [
       [
         "src/App.tsx",
-        50
+        52
       ]
     ],
     "translation": "Texte enrichi"
@@ -142,7 +150,9 @@
   "q8yluz": {
     "message": "Your name",
     "placeholders": {},
-    "comments": [],
+    "comments": [
+      "Accessible label for the name input. Not visible on screen."
+    ],
     "origin": [
       [
         "src/App.tsx",

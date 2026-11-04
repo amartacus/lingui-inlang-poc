@@ -2,6 +2,7 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "znBR2Y": [
     {
+      "description": "Unread-message counter. # is replaced by the number. Provide every plural category your language needs.",
       "declarations": [
         "input count",
         "local countPlural = count: plural"
@@ -15,15 +16,43 @@
       }
     }
   ],
-  "5D6sc7": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync.",
+  "5D6sc7": [
+    {
+      "description": "Keep the <0> (link) and <1> (bold) tags and their order around the same words.",
+      "match": {
+        "*": "Edit translations in <0>Fink</0> and see <1>updated copy</1> after a sync."
+      }
+    }
+  ],
   "fxmZBN": "Formatting",
-  "3eEmBT": "Hello, {name}!",
+  "3eEmBT": [
+    {
+      "description": "Greeting. {name} is the user's first name as typed in the input above.",
+      "match": {
+        "*": "Hello, {name}!"
+      }
+    }
+  ],
   "trBjAV": "Interpolation",
   "vXIe7J": "Language",
-  "yDslcl": "Lingui + inlang POC",
+  "yDslcl": [
+    {
+      "description": "Page title shown in the header. Keep 'Lingui' and 'inlang' untranslated (product names).",
+      "match": {
+        "*": "Lingui + inlang POC"
+      }
+    }
+  ],
   "KzKCDN": "Plain string",
   "u5SHG2": "Plurals",
   "esg2-O": "Rich text",
   "NVCdpB": "Translations are loaded at runtime from per-locale catalogs.",
-  "q8yluz": "Your name"
+  "q8yluz": [
+    {
+      "description": "Accessible label for the name input. Not visible on screen.",
+      "match": {
+        "*": "Your name"
+      }
+    }
+  ]
 }

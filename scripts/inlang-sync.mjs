@@ -8,6 +8,11 @@
 // plugins (not plugin-icu1), so ICU <-> message-format conversion is done here using the
 // inlang SDK: plugin-icu1 parses ICU, plugin-message-format writes/reads the Fink files.
 //
+// Translator descriptions: Lingui `comment` props (extracted to the catalog's `comments`) are
+// written to the source-locale (en) message-format entry as `description`, which Fink shows
+// as the message description. Code wins; a description added only in Fink is kept when the
+// code has no comment.
+//
 //   node scripts/inlang-sync.mjs export   # lingui -> inlang  (after `lingui extract`)
 //   node scripts/inlang-sync.mjs import   # inlang -> lingui  (after pulling Fink edits)
 import { loadProjectInMemory, newProject } from '@inlang/sdk'
@@ -46,6 +51,14 @@ async function convert(from, to, byLocale) {
   return Object.fromEntries(out.map((f) => [f.locale, JSON.parse(new TextDecoder().decode(f.content))]))
 }
 
+// message-format entries are either a string or [{ description?, declarations?, selectors?, match }]
+const getDescription = (entry) => (Array.isArray(entry) ? entry[0]?.description : undefined)
+function withDescription(entry, description) {
+  if (!description) return entry
+  if (Array.isArray(entry)) return [{ description, ...entry[0] }, ...entry.slice(1)]
+  return [{ description, match: { '*': entry } }]
+}
+
 const mode = process.argv[2]
 if (!['export', 'import'].includes(mode)) {
   console.error('usage: inlang-sync.mjs export|import')
@@ -68,6 +81,12 @@ if (mode === 'export') {
     }
   }
   const mf = await convert(ICU, MF, icu)
+  const previousEn = read(`${INLANG}/en.json`)
+  for (const [id, entry] of Object.entries(mf.en ?? {})) {
+    if (id === '$schema') continue
+    const fromCode = source[id]?.comments?.join(' ').trim()
+    mf.en[id] = withDescription(entry, fromCode || getDescription(previousEn[id]))
+  }
   fs.mkdirSync(INLANG, { recursive: true })
   for (const l of locales) write(`${INLANG}/${l}.json`, mf[l])
 } else {

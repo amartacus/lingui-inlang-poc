@@ -41,6 +41,27 @@ Fink's GitHub sync accepts only three resource plugins: **i18next, next-intl and
 - `<0>…</0>` rich-text tags from `<Trans>` stay **plain text** (not converted to message-format markup), so translators can still break them.
 - The ICU strings that come back are canonicalized, e.g. `{count, plural, other {未読メッセージが#件あります}}` becomes `未読メッセージが{count, plural, other {#}}件あります`. Checked: all four locales render identically through Lingui for counts 0, 1, 2, 5 and 21 (240 comparisons, 0 mismatches), and a simulated edit to one plural variant reached the Lingui catalog.
 
+## Translator descriptions from code
+
+Add a `comment` in code and it becomes the message description in Fink (the "Add description" field):
+
+```tsx
+<Trans comment="Greeting. {name} is the user's first name.">Hello, {name}!</Trans>
+t({ message: 'Your name', comment: 'Accessible label for the name input.' })
+<Plural value={count} comment="# is replaced by the number." one="…" other="…" />
+```
+
+`lingui extract` stores comments in the catalog's `comments`. `npm run i18n:push` writes them as `description` on the **source-locale** (`en`) entry in `inlang-messages/en.json`, which is where the message-format plugin keeps bundle descriptions:
+
+```json
+"3eEmBT": [{ "description": "Greeting. …", "match": { "*": "Hello, {name}!" } }]
+```
+
+- Code wins: a comment in code overwrites the description. A description added only in Fink is kept when the code has no comment.
+- Comments don't change message IDs, so existing translations stay valid.
+- Checked with `@inlang/sdk` 4.2.0: the 5 commented messages load with `bundle.description` set.
+- Not yet verified: that Fink shows the description from `en.json`, or writes UI edits back to it.
+
 ## Findings
 
 - **No Lingui-specific inlang plugin.** Lingui catalogs are ICU, and the ICU plugin parses them, but Fink's sync only accepts i18next, next-intl and message-format files, hence the conversion script. Fink was found to be stale (based on an old commit) because that sync failed.
@@ -48,4 +69,5 @@ Fink's GitHub sync accepts only three resource plugins: **i18next, next-intl and
 - Vite 8 + `@vitejs/plugin-react` 6 no longer use Babel; macros are handled by `@lingui/vite-plugin` (see `vite.config.ts`).
 - Runtime loading uses per-locale chunks. Fetching catalogs from a CDN instead would allow updates without a rebuild (not implemented).
 - Plugins are referenced by pinned version from jsDelivr because Fink can't resolve local `node_modules` plugin paths. The sync script also fetches both plugins from jsDelivr, so it needs network access.
+- `@inlang/sdk` 4.x renamed the tables (`inlang_bundle`, …). The sync script pins 2.9.1, whose `description` support is absent, so descriptions are added by editing the exported JSON rather than through the SDK.
 - Local npm registry gotcha: an Artifactory registry gets baked into `package-lock.json` `resolved` URLs. Rewrite them to `https://registry.npmjs.org/` before sharing.
